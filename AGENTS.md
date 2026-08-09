@@ -10,6 +10,19 @@ This is the Mon Amie Burger website, a Vite-powered static restaurant ordering/m
 - Start dev server: `npm run dev -- --host 127.0.0.1`
 - Build: `npm run build`
 - Preview build: `npm run preview -- --host 127.0.0.1`
+- Ad-hoc checks: `test.js` (jsdom) and `test-puppeteer.js` (headless browser) are
+  standalone scripts run with `node`; `npm test` is not wired up.
+
+## Deployment
+
+- Currently deployed via **GitHub Pages** with a custom domain — the root `CNAME`
+  file controls it. Never modify or delete `CNAME` without asking.
+- `dist/` is committed build output for that Pages setup; regenerate with
+  `npm run build`, don't hand-edit it.
+- A migration to **Cloudflare Pages** is planned (see the vault runbook). The
+  domain carries live IONOS e-mail — MX/SPF/DMARC records must be migrated
+  before any nameserver switch. Do not start this migration as a side effect
+  of another task.
 
 ## Working Rules
 
